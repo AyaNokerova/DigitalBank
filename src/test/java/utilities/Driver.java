@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.time.Duration;
 
 public class Driver {
+
     static WebDriver driver;
     public static void createDriver()  {
         // Desire capabilities is what type of session we want
@@ -56,4 +57,5 @@ public class Driver {
     }
 
 }
+
 
