@@ -3,18 +3,17 @@ Feature:This feature will allow user to successfully create an account
   Reviewer - Dana
 
   Scenario: Verify Sign Up Here link redirects the user to the Sign Up page
-    Given user is on Homepage
+    Given user is on Login page
     When user clicks on sign Up Here link
     Then verify user is on the registration page
 
   Scenario Outline: Verify user is able to choose a proper title from the drop-down window
     Given user is on the Registration page
-    When user click on "<Title>" field
+    When user click on Title field
     Then verify user can see the drop-down window with title options
-    When user clicks on proper "<selection>"
-    Then verify chosen selection appears in the Title field
+    And verify chosen "<selection>" appears in the "<title>" field
     Examples:
-      | Title | selection |
+      | title | selection |
       | Ms.   | Ms.       |
       | Mr.   | Mr.       |
       | Mrs.  | Mrs.      |

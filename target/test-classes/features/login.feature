@@ -1,13 +1,14 @@
 Feature: Login feature
   Author - Aya
   Reviewer - Dana
-  Background: Verify user is on the main page
+
+  Scenario: : Verify user is on the main page
     Given user entered correct URL
     Then verify the title of the webpage is Digital Bank
     And verify all sign-in text boxes and buttons are present
 
   Scenario: Verify user is able to login with valid credentials
-    Given user enters valid username "<mari.smith@gmail.com>" and password "<M@ry2001>"
+    Given user enters valid username "<username>" and password "<password>"
     When user clicks on Sign In button
     Then verify user is successfully logged in to the account
 
