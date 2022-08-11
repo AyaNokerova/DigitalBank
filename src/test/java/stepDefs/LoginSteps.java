@@ -68,6 +68,11 @@ public class LoginSteps extends Login{
     public void user_had_more_than_unsuccessful_login_attempts(Integer int1) {
     }
 
+    @When("user clicks on sign Up Here link")
+    public void user_clicks_on_sign_up_here_link() {
+            login.goToSignUpPage();
+    }
+
 
 }
 

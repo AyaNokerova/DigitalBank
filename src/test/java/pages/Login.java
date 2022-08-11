@@ -25,8 +25,20 @@ public class Login extends BasePage {
     @FindBy (xpath = "//div[contains(@class, 'alert')]")
     public WebElement errorMessage;
 
+    @FindBy(xpath = "//a[contains(text(),' Sign Up Here')]")
+    WebElement signUpHereLink;
+
+
     public void openWebsite() {
         driver.get(ConfigReader.getProperty("app.baseurl"));
     }
 
+    public void goToSignUpPage(){
+
+        signUpHereLink.click();
+
+    }
+
 }
+
+

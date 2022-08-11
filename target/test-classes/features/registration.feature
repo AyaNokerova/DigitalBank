@@ -2,13 +2,13 @@ Feature:This feature will allow user to successfully create an account
   Author - Aya
   Reviewer - Dana
 
-  Scenario: Verify Sign Up Here link redirects the user to the Sign Up page
-    Given user is on Homepage
+  Background: Verify Sign Up Here link redirects the user to the Sign Up page
+    Given user entered correct URL
     When user clicks on sign Up Here link
     Then verify user is on the registration page
 
   Scenario Outline: Verify user is able to choose a proper title from the drop-down window
-    Given user is on the Registration page
+    #Given user is on the Registration page
     When user click on "<Title>" field
     Then verify user can see the drop-down window with title options
     When user clicks on proper "<selection>"
@@ -50,7 +50,7 @@ Feature:This feature will allow user to successfully create an account
       | 08    | 15  | 1967 |
 
 
-  Scenario Outline: Verify user can enter invalid date of birth
+  Scenario Outline: Verify user can not enter invalid date of birth
     Given user clicks on DOB field
     When user types incorrect "<InvalidMonth>", "<InvalidDay>", "<InvalidYear>" format
     Then verify user gets an error message "Please match the requested format"
@@ -59,7 +59,7 @@ Feature:This feature will allow user to successfully create an account
       | 13           | 32         | 2023        |
       | 12           | 01         | 1867        |
       | 02           | 30         | 1998        |
-      | 12           | 06         | 2007        |
+      | 12           | 06         | 2050        |
 
   Scenario Outline:  Verify user is able to enter correct SSN
     Given user clicks on SSN field
