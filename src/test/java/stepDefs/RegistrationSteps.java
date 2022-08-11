@@ -3,28 +3,34 @@ package stepDefs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import pages.Registration;
 
 public class RegistrationSteps {
 
-    @Given("user is on Homepage")
-    public void user_is_on_homepage() {
+    Registration registration = new Registration();
 
-    }
+//    @Given("user is on Homepage")
+//    public void user_is_on_homepage() {
+//
+//    } //**Reused @Given("user entered correct URL") from LoginSteps class**//
 
-    @When("user clicks on sign Up Here link")
-    public void user_clicks_on_sign_up_here_link() {
-
-    }
+//    @When("user clicks on sign Up Here link")
+//    public void user_clicks_on_sign_up_here_link() {
+//
+//    } //**moved to LoginSteps class**//
 
     @Then("verify user is on the registration page")
     public void verify_user_is_on_the_registration_page() {
 
-    }
-
-    @Given("user is on the Registration page")
-    public void user_is_on_the_registration_page() {
+        Assert.assertTrue("User is not on Registration Page", registration.verifyRegistrationPage());
 
     }
+
+//    @Given("user is on the Registration page")
+//    public void user_is_on_the_registration_page() {
+//
+//    } //**duplicate method**//
 
     @When("user click on {string} field")
     public void user_click_on_field(String string) {
@@ -71,27 +77,37 @@ public class RegistrationSteps {
 
     @Given("user clicks on DOB field")
     public void user_clicks_on_dob_field() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        registration.fillOutStandardInfoBeforeDOB();
+        registration.clickOnDOB();
     }
 
     @When("user types correct {string}, {string}, {string} format")
-    public void user_types_correct_format(String string, String string2, String string3) {
+    public void user_types_correct_format(String validDate, String validMonth, String validYear) {
+        String dob = validDate + "/" + validMonth + "/" + validYear;
+        registration.enterDobFields(dob);
     }
 
     @Then("verify DOB is displayed  in the corresponding field")
     public void verify_dob_is_displayed_in_the_corresponding_field() {
 
+        Assert.assertEquals("No error message found", registration.verifyInvalidDOBErrorMsg());
+
     }
     @When("user types incorrect {string}, {string}, {string} format")
-    public void user_types_incorrect_format(String string, String string2, String string3) {
+    public void user_types_incorrect_format(String invalidDate, String invalidMonth, String invalidYear) {
+
+        String dob = invalidDate + "/" + invalidMonth + "/" + invalidYear;
+        registration.enterDobFields(dob);
 
     }
 
     @Then("verify user gets an error message {string}")
-    public void verify_user_gets_an_error_message(String string) {
+    public void verify_user_gets_an_error_message(String invalidDOBFormatMsg) {
+
+        Assert.assertEquals(invalidDOBFormatMsg, registration.verifyInvalidDOBErrorMsg());
 
     }
+
     @Given("user clicks on SSN field")
     public void user_clicks_on_ssn_field() {
         // Write code here that turns the phrase above into concrete actions
