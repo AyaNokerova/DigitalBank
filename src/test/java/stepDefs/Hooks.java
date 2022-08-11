@@ -1,14 +1,11 @@
 package stepDefs;
 
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import pages.Login;
-import pages.Registration;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -16,16 +13,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class Hooks {
-    Login login;
-    Registration registration;
-
 
     @Before
     public void setUp() {
         ConfigReader.initProperties();
         Driver.createDriver();
-        login = new Login();
-        registration = new Registration();
     }
 
     @After
@@ -48,7 +40,6 @@ public class Hooks {
         Driver.getDriver().quit();
 
     }
-
 }
 
 
