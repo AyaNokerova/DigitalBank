@@ -24,7 +24,7 @@ Feature: Login feature
       | hosna123@yahoocom    | JHBvbfhdsf2     |
 
   Scenario Outline: Verify user is not able to login with valid username and invalid password
-    Given user enters valid username "<ValidEmail>" and invalid password "<InvalidPassword>"
+    Given user enters valid username "<InVal idEmail>" and invalid password "<InvalidPassword>"
     When user clicks on Sign In button
     Then verify user login failed with an error message
     Examples:
