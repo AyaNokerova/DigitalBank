@@ -158,5 +158,4 @@ public class NewCheckingAccountSteps {
     newCheckingAccountPage.verifyUserGetSuccessfullyMessage();
     }
 
-
 }
