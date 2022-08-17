@@ -38,7 +38,7 @@ Feature:This feature will allow user to successfully create an account
       | M                  | M                      |
       | F                  | F                      |
 
-
+  @dobValid
   Scenario Outline: Verify user can enter correct date of birth
     Given user clicks on DOB field
     When user types correct "<month>", "<day>", "<year>" format
@@ -49,7 +49,7 @@ Feature:This feature will allow user to successfully create an account
       | 12    | 01  | 1995 |
       | 08    | 15  | 1967 |
 
-
+  @dobInvalid
   Scenario Outline: Verify user can not enter invalid date of birth
     Given user clicks on DOB field
     When user types incorrect "<InvalidMonth>", "<InvalidDay>", "<InvalidYear>" format
