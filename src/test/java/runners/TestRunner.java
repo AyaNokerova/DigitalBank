@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumber-report.html"},
         features = "src//test//resources//features",
         glue = "stepDefs",
-        tags = "@nsa1-4"
+        tags = "@nsa7-9"
 )
 public class TestRunner {
 

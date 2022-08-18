@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.HomePage;
 import pages.Login;
 import pages.NewCheckingAccountPage;
@@ -157,5 +158,6 @@ public class NewCheckingAccountSteps {
     public void verify_user_is_redirected_to_page_with_checking_accounts_and_cen_see_message_account_name() {
     newCheckingAccountPage.verifyUserGetSuccessfullyMessage();
     }
+
 
 }

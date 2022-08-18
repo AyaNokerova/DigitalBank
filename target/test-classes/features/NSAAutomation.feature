@@ -34,13 +34,29 @@ Feature: This feature file describes scenarios to verify successful navigation t
     Then View Savings and New Savings options are displayed
 
     @nsa1-4
-    Scenario: Verify 2nd scenario
+    Scenario: Verify New Savings Account header is displayed and Radio buttons are displayed unchecked
       Given user clicks on Savings field
       When user right clicks on New Savings option and chooses open in new tab
       Then Page title "New Savings Account" is displayed
       And Select Savings Account Type field is displayed
       And Radio button options: Savings, Money Market are displayed
       But Radio button options: Savings, Money Market are unchecked
+
+    @nsa7-9
+  Scenario: verify user is able to create an account and redirected to page to view saving account
+    Given user clicks on Savings field
+    When user right clicks on New Savings option and chooses open in new tab
+    Then user filled the fields
+    When user clicks on the Submit button
+    Then verify user is redirected to page to view saving account
+
+   @nsa7-9
+  Scenario: verify user can click on Reset button
+    Given user clicks on Savings field
+    When user right clicks on New Savings option and chooses open in new tab
+   Then user filled the fields
+    When user clicks on the Reset button
+    Then verify all the filled values are reset to default
 
 
 
