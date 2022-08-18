@@ -28,7 +28,7 @@ Feature: This feature file describes scenarios to verify successful navigation t
   @nsa1-4
   Scenario: Verify Savings field is displayed under BANKING ACCOUNTS section and it has View Savings, New Savings
   options available
-    Given verify user is successfully logged in to the account
+    Given user is successfully logged in to the account
     Then Savings field is displayed under BANKING ACCOUNTS section
     When user clicks on Savings field
     Then View Savings and New Savings options are displayed
@@ -54,7 +54,7 @@ Feature: This feature file describes scenarios to verify successful navigation t
   Scenario: verify user can click on Reset button
     Given user clicks on Savings field
     When user right clicks on New Savings option and chooses open in new tab
-   Then user filled the fields
+    Then user filled the fields
     When user clicks on the Reset button
     Then verify all the filled values are reset to default
 

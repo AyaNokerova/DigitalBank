@@ -34,8 +34,8 @@ public class LoginSteps extends Login{
             login.doLogin();
     }
 
-    @Then("verify user is successfully logged in to the account")
-    public void verify_user_is_successfully_logged_in_to_the_account()
+    @Then("user is successfully logged in to the account")
+    public void user_is_successfully_logged_in_to_the_account()
   {
         homePage.verifyUserIsSignedInSuccessfully();
     }
