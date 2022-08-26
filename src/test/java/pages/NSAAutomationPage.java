@@ -2,6 +2,7 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utilities.ConfigReader;
@@ -72,7 +73,10 @@ public class NSAAutomationPage extends BasePage {
         initialDepositField.sendKeys(amount);
     }
     public void clickOnSubmitButton(){
-        submitButton.click();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",submitButton);
+
+       // submitButton.click();
     }
     public void verifyUserGetSuccessfullyMessage(){
         Assert.assertTrue(successfullyMessage.isDisplayed());
