@@ -131,7 +131,7 @@ public class RegistrationSteps {
     }
 
     @Then("verify password is hidden")
-    public void verify_password_is_hidden(io.cucumber.datatable.DataTable dataTable) {
+    public void verify_password_is_hidden() {
 
     }
     @When("user types incorrect {string} format")
